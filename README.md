@@ -6,7 +6,7 @@ A web-based application that enables users to virtually try on various t-shirt d
 
 - **Real-time Pose Detection:** Utilizes Mediapipe for detecting and tracking body landmarks.
 - **Dynamic Image Overlay:** Automatically resizes and positions t-shirt designs on users based on their body posture.
-- **Interactive Buttons:** Enables users to switch between different t-shirt designs.
+- **Interactive Buttons:** Enables users to switch between different t-shirt designs. Able to create own digital wardrobe and save them.
 - **Web-based Interface:** Hosted using Flask for a seamless experience.
 
 ## Demo 🎥

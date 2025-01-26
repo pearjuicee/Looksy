@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet"> <!-- Open Sans Bold -->
+    <style>
+        body {
+            background-color: #c9f1ef; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif; 
+            font-weight: bold; 
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px; 
+            text-align: center;
+            background-color: #c9f1ef; 
+            padding: 10px;
+            width: 100%;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px; 
+        }
+
+        .upload-box {
+            border: 3px dashed #5f4bb6;
+            padding: 80px; 
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            cursor: pointer;
+            min-height: 250px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upload-box:hover {
+            background-color: #e6e6e6;
+        }
+
+        input[type="file"] {
+            display: none; 
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        /* Button Style */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5f4bb6;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #4a3b8e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">Upload your image...</div>
+    <div class="container">
+        <label for="image-upload" class="upload-box">
+            Click or drag to upload
+        </label>
+        <input type="file" id="image-upload" accept="image/*">
+        <a href="#" class="button">Try it on !</a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

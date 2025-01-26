@@ -57,10 +57,15 @@ pip install flask authlib python-dotenv requests
 ## Project Structure 📂
 
 ```
-|-- hackathon/
+|-- Looksy/
 |   |-- app.py                # Main Flask application
 |   |-- camera.py             # Camera-based pose detection
-|   |-- env/                  # Virtual environment (optional)
+|   |-- .env/                  # Virtual environment (optional)
+|   |-- requirements.txt
+|   |-- Static
+|       |-- logo.png
+|       |-- outfit.png
+|       |-- shirt.png
 |   |-- Resources/            # Media assets (shirts, buttons, etc.)
 |       |-- Shirts/
 |           |-- 1.png         # Shirt design 1
@@ -68,7 +73,10 @@ pip install flask authlib python-dotenv requests
 |           |-- ...
 |       |-- button.png        # Interactive button image
 |-- templates/
-|   |-- index.html            # Webpage for hosting the app
+|   |-- camera.html            # Webpage for hosting the app
+|   |-- login.html
+|   |-- upload.html
+|   |-- wardrobe.html   
 ```
 
 ## Usage 🎮
@@ -79,15 +87,6 @@ pip install flask authlib python-dotenv requests
 
 2. **Stopping the Application:**
    - Press `ctrl + c` to close the webcam stream.
-
-## Dependencies 🧩
-
-Make sure the following dependencies are installed:
-- Python 3.8 or later
-- OpenCV (`pip install opencv-python`)
-- Mediapipe (`pip install mediapipe`)
-- CVZone (`pip install cvzone==1.5.6`)
-- Flask (`pip install flask`)
 
 
 Enjoy exploring the world of virtual try-ons! 🥳

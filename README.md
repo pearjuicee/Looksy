@@ -71,9 +71,9 @@ pip install flask authlib python-dotenv requests
 |           |-- 1.png         # Shirt design 1
 |           |-- 2.png         # Shirt design 2
 |           |-- ...
-|       |-- button.png        # Interactive button image
+|       |-- button.png       
 |-- templates/
-|   |-- camera.html            # Webpage for hosting the app
+|   |-- camera.html           
 |   |-- login.html
 |   |-- upload.html
 |   |-- wardrobe.html   

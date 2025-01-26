@@ -42,6 +42,7 @@ pip install opencv-python
 pip install mediapipe
 pip install cvzone==1.5.6
 pip install flask
+pip install firebase-admin
 ```
 
 ### 4. Run the Application 

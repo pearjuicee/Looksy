@@ -1,6 +1,6 @@
 # Looksy: A Virtual Dressing Room 👚👕
 
-A web-based application that enables users to virtually try on various t-shirt designs in real time using a webcam. The application leverages computer vision and machine learning techniques for pose detection and dynamic image overlay.
+A web-based application that enables users to virtually try on various t-shirt designs in real time using a webcam. It tracks body movements to position the shirt correctly using computer vision, adjusting the size and fit dynamically. Users can switch between designs, see how the shirts look on them, take screenshots, and even save them to create their own virtual wardrobe.
 
 ## Features 🛠️
 
@@ -43,6 +43,7 @@ pip install mediapipe
 pip install cvzone==1.5.6
 pip install flask
 pip install firebase-admin
+pip install Pillow
 ```
 
 ### 4. Run the Application 

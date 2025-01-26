@@ -9,8 +9,8 @@ import numpy as np
 cap = cv2.VideoCapture(0)
 detector = PoseDetector()
 
-cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
-cv2.setWindowProperty("Image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+# cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
+# cv2.setWindowProperty("Image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 2560)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1440)

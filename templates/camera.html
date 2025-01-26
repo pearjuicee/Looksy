@@ -63,25 +63,23 @@
       }
 
       .logo-button:hover {
-        transform: scale(1.1); /* Slightly enlarge on hover */
+        transform: scale(1.1); 
       }
     </style>
   </head>
 
   <body>
     <div class="video-container">
-      <!-- Video feed -->
+     
       <img
         id="camera-feed"
         src="{{ url_for('video_feed') }}"
         alt="Camera Feed"
       />
 
-      <!-- Save Button -->
       <button class="save-button" id="save-button">Save your outfit!</button>
     </div>
 
-    <!-- Logo Button -->
     <a href="/wardrobe">
       <img
         src="../static/logo.png"
@@ -90,5 +88,29 @@
         id="logo-button"
       />
     </a>
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <script>
+      function captureScreenshot() {
+        const videoElement = document.getElementById('camera-feed');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+
+        canvas.width = videoElement.naturalWidth;
+        canvas.height = videoElement.naturalHeight;
+
+        context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+        const imageUrl = canvas.toDataURL('image/png');
+
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        link.download = 'outfit-screenshot.png';  
+        link.click();  
+      }
+
+      document.getElementById('save-button').addEventListener('click', captureScreenshot);
+    </script>
   </body>
 </html>
+

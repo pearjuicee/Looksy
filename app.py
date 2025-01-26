@@ -53,7 +53,8 @@ def callback():
     resp = auth0.get('userinfo')
     userinfo = resp.json()
     session['profile'] = userinfo
-    return redirect('/dashboard')
+    return redirect('/upload')  # Redirect to the upload page after successful login
+
 
 @app.route('/logout')
 def logout():

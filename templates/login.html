@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looksy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top left, #c9f1ef, #bec9fa); 
+            color: #333;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start; 
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: row; 
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            position: relative;
+        }
+
+        .header {
+            position: absolute;
+            top: 10px; 
+            left: 20px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 21px; 
+            font-weight: bold; 
+            color: #333;
+            margin: 0;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #555;
+            font-size: 1rem;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .header a:hover {
+            color: #333;
+        }
+
+
+        .content {
+            margin-top: 150px;
+            text-align: left;
+            padding-left: 10px;
+            flex: 1;
+        }
+
+        .content h1 {
+            font-family: 'Questrial', sans-serif;
+            font-size: 65px;
+            color: #5f4bb6;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .content h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 37px;
+            color: #333;
+            font-weight: bold;
+            width: 300px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .content p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 21px;
+            margin: 20px 0;
+            font-weight: normal;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5f4bb6;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #4a3b8e;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 50%;
+            right: -240px;
+            transform: translateY(-40%);
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .image-container img {
+            width: 250px;
+            height: auto;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 600px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 0; 
+            border-radius: 10px;
+            z-index: 1000;
+            display: none; 
+            display: flex; 
+        }
+
+        .popup-left {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to bottom right, #c9f1ef, #bec9fa); 
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Center content vertically */
+        }
+
+        .popup-right {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .popup-right h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .popup-right p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .popup .close-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; 
+        }
+
+        .social-button {
+            width: 300px; 
+            padding: 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            color: black;
+            background-color: #DDDDDD; 
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+        }
+
+        .social-button i {
+            margin-right: 10px; 
+        }
+
+        .looksy-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            color: #5f4bb6;
+        }
+
+        .popup-logo {
+            width: 90px; 
+            height: auto;
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Looksy</h1>
+            <div style="margin-right: auto;">
+                <a id="signUpButton">Sign up</a>
+                <a id="loginButton">Log in</a>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Easy Try, Perfect Buy</h1>
+            <h2>Your Virtual Style Made Simple!</h2>
+            <p>Upload a photo, try on clothes virtually, and discover your perfect look before you buy. Save time, plan outfits, and organize your favorites in a virtual closet. Shopping made easy and stress-free!</p>
+            <a href="#" class="button">Get started !</a>
+        </div>
+        <div class="image-container">
+            <img src="outfit.png" alt="Virtual Closet">
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <div class="popup-left">
+            <img src="logo.png" alt="Logo" class="popup-logo"> 
+            <div class="looksy-title">Looksy</div>
+        </div>
+        <div class="popup-right">
+            <button class="close-btn" id="closePopup">X</button>
+            <h2>Get started with Looksy</h2>
+            <p>Choose a method to continue</p>
+            <div class="social-buttons">
+                <button class="social-button"><i class="fab fa-apple"></i> Continue with Apple</button>
+                <button class="social-button"><i class="fab fa-google"></i> Continue with Google</button>
+                <button class="social-button"><i class="fas fa-envelope"></i> Continue with Email</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById("signUpButton");
+        const loginButton = document.getElementById("loginButton");
+        const popup = document.getElementById("popup");
+        const overlay = document.getElementById("overlay");
+        const closePopup = document.getElementById("closePopup");
+
+        window.onload = () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        };
+
+        signUpButton.addEventListener("click", () => {
+            popup.style.display = "flex";
+            overlay.style.display = "block";
+        });
+
+        loginButton.addEventListener("click", () => {
+            popup.style.display = "flex";
+            overlay.style.display = "block";
+        });
+
+        closePopup.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        });
+
+        overlay.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

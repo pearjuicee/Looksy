@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Images</title>
+    <style>
+        body {
+            background-color: #c9f1ef; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column; 
+            position: relative; 
+        }
+
+        .title {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            position: relative;
+            top: 70px; 
+            text-align: center;
+            background-color: #c9f1ef; 
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 30px; 
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 180px; 
+            margin-top: 70px; 
+        }
+
+        .container img {
+            width: 250px; 
+            height: auto; 
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 230px; 
+            margin-top: 30px; 
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color:#9fa5c8 ;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #4a3b8e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">Sneak a peek at your wardrobe</div>
+
+    <div class="container">
+        <img src="shirt.png" alt="Image 1">
+        <img src="outfit.png" alt="Image 2">
+    </div>
+
+    <div class="button-container">
+        <a href="#" class="button">Explore Clothing Pieces</a>
+        <a href="#" class="button">Explore Saved Outfits</a>
+    </div>
+
+</body>
+</html>
+

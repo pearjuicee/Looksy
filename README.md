@@ -44,6 +44,8 @@ pip install cvzone==1.5.6
 pip install flask
 pip install firebase-admin
 pip install Pillow
+pip install flask authlib python-dotenv requests
+
 ```
 
 ### 4. Run the Application 

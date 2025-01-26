@@ -10,9 +10,8 @@ A web-based application that enables users to virtually try on various t-shirt d
 - **Web-based Interface:** Hosted using Flask for a seamless experience.
 
 ## Demo 🎥
-
-Include screenshots or a short video showcasing the application in action:
-![T-Shirt Overlay](pose_tracking_full_body_landmarks.png)
+<img src="https://github.com/user-attachments/assets/fab4de56-5030-486c-8501-95cab9e1b6c2" alt="loosky1" width="700"/>
+<img src="https://github.com/user-attachments/assets/d99334b9-b4c7-42eb-a2f6-8008144adc5b" alt="outfit-screenshot (3)" width="705"/>
 
 ## Installation ⚙️
 

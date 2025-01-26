@@ -1,80 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Try-On</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #c9f1ef;  
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;  
-            flex-direction: column;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #c9f1ef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        flex-direction: column;
+      }
 
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border-radius: 20px; 
-            overflow: hidden;  
-        }
+      .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 80%;
+      }
 
-        #camera-feed {
-            width: 100%;  
-            height: 85vh;  
-            object-fit: cover;  
-            border-radius: 20px;  
-        }
+      #camera-feed {
+        width: 100%;
+        height: 85vh;
+        object-fit: cover;
+        border-radius: 20px;
+      }
 
-        .save-button {
-            margin-top: 20px;  
-            padding: 15px 30px;
-            background-color: #5f4bb6;  
-            color: white;
-            font-size: 18px;
-            border-radius: 30px;  
-            cursor: pointer;
-            border: none;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
+      .save-button {
+        margin-top: 20px;
+        padding: 15px 30px;
+        background-color: #5f4bb6;
+        color: white;
+        font-size: 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        border: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
 
-        .save-button:hover {
-            background-color: #4a3b8e;  
-        }
+      .save-button:hover {
+        background-color: #4a3b8e;
+      }
+
+      .logo-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+      }
+
+      .logo-button:hover {
+        transform: scale(1.1); /* Slightly enlarge on hover */
+      }
     </style>
-</head>
-<body>
-    <div class="video-container">
-        <video id="camera-feed" autoplay></video>
+  </head>
 
-        <button class="save-button">Save your outfit!</button>
+  <body>
+    <div class="video-container">
+      <!-- Video feed -->
+      <img
+        id="camera-feed"
+        src="{{ url_for('video_feed') }}"
+        alt="Camera Feed"
+      />
+
+      <!-- Save Button -->
+      <button class="save-button" id="save-button">Save your outfit!</button>
     </div>
 
-    <script>
-        async function initCamera() {
-            const videoElement = document.getElementById('camera-feed');
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                videoElement.srcObject = stream;
-            } catch (err) {
-                console.error("Error accessing camera: ", err);
-            }
-        }
-
-        window.onload = initCamera;
-    </script>
-</body>
+    <!-- Logo Button -->
+    <a href="/wardrobe">
+      <img
+        src="../static/logo.png"
+        alt="Logo Button"
+        class="logo-button"
+        id="logo-button"
+      />
+    </a>
+  </body>
 </html>
-
-
-
-
-

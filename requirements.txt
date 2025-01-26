@@ -1,0 +1,9 @@
+flask
+opencv-python
+numpy
+cvzone==1.5.6
+mediapipe
+python-dotenv
+Authlib
+protobuf<5
+requests
